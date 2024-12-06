@@ -1,8 +1,7 @@
-
 const Loading = () => {
     return (
-        <div>
-            Loading spinner
+        <div className="h-screen flex items-center justify-center">
+            <span className="loading loading-bars loading-lg text-blue-700"></span>
         </div>
     );
 };
