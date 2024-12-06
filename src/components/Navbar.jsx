@@ -100,7 +100,7 @@ const Navbar = () => {
   return (
     <header className="bg-gray-900">
       <nav className="w-full z-50 ">
-        <div className="max-w-7xl w-11/12 mx-auto px-3 sm:px-4 rounded-b-xl shadow-sm flex items-center justify-between py-3">
+        <div className="max-w-7xl w-11/12 mx-auto rounded-b-xl shadow-sm flex items-center justify-between py-3">
           {/* Hamburger Icon for Medium/Small Screens */}
           <div className="lg:hidden flex items-center">
             <button
