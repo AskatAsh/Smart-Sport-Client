@@ -148,7 +148,7 @@ const Register = () => {
                   name="photo_url"
                   placeholder="photo url"
                   className="input input-bordered rounded-none focus:outline-none focus:border focus:border-gray-900"
-                  required
+                  // required
                 />
               </div>
               {/* password */}
