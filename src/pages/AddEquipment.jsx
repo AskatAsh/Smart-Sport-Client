@@ -1,20 +1,45 @@
+import { useContext } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddEquipment = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddCoffee = (e) => {
     e.preventDefault();
     const form = e.target;
-        const itemName = form.itemName.value;
-        const quantity = Number(form.stock.value);
-        const customization = form.customization.value;
-        const deliveryTime = form.deliveryTime.value;
-        const category = form.category.value;
-        const description = form.description.value;
-        const price = Number(form.price.value);
-        const rating = Number(form.rating.value);
-        const image = form.image.value;
-        const newEquipment = {itemName, quantity, customization, deliveryTime, category, description, price, rating, image};
-        console.log(newEquipment);
+    const itemName = form.itemName.value;
+    const quantity = Number(form.stock.value);
+    const customization = form.customization.value;
+    const deliveryTime = form.deliveryTime.value;
+    const category = form.category.value;
+    const description = form.description.value;
+    const price = Number(form.price.value);
+    const rating = Number(form.rating.value);
+    const image = form.image.value;
+    const newEquipment = {
+      itemName,
+      quantity,
+      customization,
+      deliveryTime,
+      category,
+      description,
+      price,
+      rating,
+      image,
+    };
+    fetch('http://localhost:5000/AllEquipments', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(newEquipment)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
+    console.log(newEquipment);
   };
   return (
     <section className="my-16">
@@ -32,7 +57,7 @@ const AddEquipment = () => {
             {/* Item Name */}
             <div className="w-full">
               <label htmlFor="itemName" className="font-semibold">
-              Item Name
+                Item Name
               </label>
               <br />
               <input
@@ -46,7 +71,7 @@ const AddEquipment = () => {
             {/* Stock Quantity */}
             <div className="w-full">
               <label htmlFor="stock" className="font-semibold">
-              Stock Status (available quantity)
+                Stock Status (available quantity)
               </label>
               <br />
               <input
@@ -63,7 +88,7 @@ const AddEquipment = () => {
             {/* Customization */}
             <div className="w-full">
               <label htmlFor="customization" className="font-semibold">
-              Customization
+                Customization
               </label>
               <br />
               <input
@@ -77,7 +102,7 @@ const AddEquipment = () => {
             {/* Delivery Time */}
             <div className="w-full">
               <label htmlFor="deliveryTime" className="font-semibold">
-              Processing Time (in days)
+                Processing Time (in days)
               </label>
               <br />
               <input
@@ -93,7 +118,7 @@ const AddEquipment = () => {
             {/* Category Name */}
             <div className="w-full">
               <label htmlFor="category" className="font-semibold">
-              Category Name
+                Category Name
               </label>
               <br />
               <input
@@ -107,7 +132,7 @@ const AddEquipment = () => {
             {/* Description */}
             <div className="w-full">
               <label htmlFor="description" className="font-semibold">
-              Description
+                Description
               </label>
               <br />
               <input
@@ -123,7 +148,7 @@ const AddEquipment = () => {
             {/* Price */}
             <div className="w-full">
               <label htmlFor="price" className="font-semibold">
-              Price (taka)
+                Price (taka)
               </label>
               <br />
               <input
@@ -139,7 +164,7 @@ const AddEquipment = () => {
             {/* Rating */}
             <div className="w-full">
               <label htmlFor="rating" className="font-semibold">
-              Rating (1 to 5)
+                Rating (1 to 5)
               </label>
               <br />
               <input
@@ -154,11 +179,43 @@ const AddEquipment = () => {
               />
             </div>
           </div>
+          <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
+            {/* User Name */}
+            <div className="w-full">
+              <label htmlFor="userName" className="font-semibold">
+                User Name (read only)
+              </label>
+              <br />
+              <input
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                type="text"
+                name="userName"
+                id="userName"
+                disabled
+                placeholder={user?.displayName}
+              />
+            </div>
+            {/* User Email */}
+            <div className="w-full">
+              <label htmlFor="userEmail" className="font-semibold">
+                User Email (read only)
+              </label>
+              <br />
+              <input
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                type="email"
+                name="userEmail"
+                id="userEmail"
+                disabled
+                placeholder={user?.email}
+              />
+            </div>
+          </div>
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center">
             {/* Image Link */}
             <div className="w-full">
               <label htmlFor="image" className="font-semibold">
-              Image (link)
+                Image (link)
               </label>
               <br />
               <input
@@ -171,11 +228,12 @@ const AddEquipment = () => {
             </div>
           </div>
 
-          <input
+          <button
             type="submit"
-            value="Add Equipment"
-            className="md:col-span-2 btn bg-gray-900 rounded-none text-white border-none"
-          />
+            className="md:col-span-2 btn bg-gray-900 hover:shadow-xl rounded-none text-white border-none "
+          >
+            Add Equipment
+          </button>
         </div>
       </form>
     </section>
