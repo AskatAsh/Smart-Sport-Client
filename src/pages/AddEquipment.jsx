@@ -33,28 +33,30 @@ const AddEquipment = () => {
       userEmail,
       image,
     };
-    fetch('http://localhost:5000/allEquipments', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify(newEquipment)
+    fetch("https://smart-sport-server.vercel.app/allEquipments", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(newEquipment),
     })
-    .then(res => res.json())
-    .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if(data.insertedId && data.acknowledged){
-            Swal.fire({
-                title: 'Success!',
-                text: 'Added New Equipment successfully!',
-                icon: 'success',
-                confirmButtonText: 'Ok, Continue!'
-              })
-            form.reset();
+        if (data.insertedId && data.acknowledged) {
+          Swal.fire({
+            title: "Success!",
+            text: "Added New Equipment successfully!",
+            icon: "success",
+            confirmButtonText: "Ok, Continue!",
+          });
+          form.reset();
         }
-    }).catch(error => {
+      })
+      .catch((error) => {
         toastMessage(error.message, "error");
-    })
+        console.log(error);
+      });
     console.log(newEquipment);
   };
   return (
@@ -126,7 +128,7 @@ const AddEquipment = () => {
                 type="text"
                 name="deliveryTime"
                 id="deliveryTime"
-                placeholder="Delivery Time e.g. 3-5 / 3 to 5"
+                placeholder="e.g. 3-5 businness days"
               />
             </div>
           </div>
@@ -234,13 +236,14 @@ const AddEquipment = () => {
                 Description
               </label>
               <br />
-              <textarea rows={4}
+              <textarea
+                rows={4}
                 className="textarea textarea-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
                 name="description"
                 id="description"
                 placeholder="Add Description"
               />
-            </div>      
+            </div>
           </div>
 
           <button
