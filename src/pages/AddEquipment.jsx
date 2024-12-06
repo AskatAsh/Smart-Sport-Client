@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
-  const { user } = useContext(AuthContext);
+  const { user, toastMessage } = useContext(AuthContext);
 
   const handleAddCoffee = (e) => {
     e.preventDefault();
@@ -17,6 +18,8 @@ const AddEquipment = () => {
     const price = Number(form.price.value);
     const rating = Number(form.rating.value);
     const image = form.image.value;
+    const userName = user?.displayName;
+    const userEmail = user?.email;
     const newEquipment = {
       itemName,
       quantity,
@@ -26,9 +29,11 @@ const AddEquipment = () => {
       description,
       price,
       rating,
+      userName,
+      userEmail,
       image,
     };
-    fetch('http://localhost:5000/AllEquipments', {
+    fetch('http://localhost:5000/allEquipments', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
@@ -38,6 +43,17 @@ const AddEquipment = () => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        if(data.insertedId && data.acknowledged){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Added New Equipment successfully!',
+                icon: 'success',
+                confirmButtonText: 'Ok, Continue!'
+              })
+            form.reset();
+        }
+    }).catch(error => {
+        toastMessage(error.message, "error");
     })
     console.log(newEquipment);
   };
