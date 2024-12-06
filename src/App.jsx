@@ -1,16 +1,17 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
-
   return (
-    <div className='font-jost bg-gray-50'>
+    <div className="font-jost bg-gray-50">
       <Navbar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
