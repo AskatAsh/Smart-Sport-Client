@@ -43,12 +43,13 @@ const router = createBrowserRouter([
         loader: () => fetch('https://smart-sport-server.vercel.app/allEquipments')
       },
       {
-        path: "/viewDetails",
+        path: "/viewDetails/:id",
         element: (
           <PrivateRoutes>
             <ViewDetails />
           </PrivateRoutes>
         ),
+        loader: ({params}) => fetch(`https://smart-sport-server.vercel.app/allEquipments/${params.id}`)
       },
       {
         path: "/myEquipmentList",

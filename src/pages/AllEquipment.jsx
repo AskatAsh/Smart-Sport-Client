@@ -2,11 +2,10 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 
 const AllEquipment = () => {
   const equipmentList = useLoaderData();
-  console.log(equipmentList)
   const navigate = useNavigate();
 
   const handleViewDetails = (id) => {
-    navigate(`/equipment/${id}`);
+    navigate(`/viewDetails/${id}`);
   };
 
   return (
