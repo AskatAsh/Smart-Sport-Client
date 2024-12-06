@@ -105,13 +105,13 @@ const Register = () => {
           <title>SmartSport | Register</title>
         </Helmet>
       </HelmetProvider>
-      <div className="hero my-10">
+      <div className="hero my-10 bg-gray-50">
         <div className="hero-content flex-col max-w-96 w-11/12">
           <div className="text-center">
-            <h1 className="text-3xl font-bold">Sign up now!</h1>
+            <h1 className="text-3xl font-bold">Register Now!</h1>
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl relative">
-            <form className="card-body" onSubmit={handleSignUp}>
+          <div className="card bg-base-100 w-full max-w-sm shrink-0 border shadow-lg rounded-none border-gray-900 relative">
+            <form className="card-body font-medium" onSubmit={handleSignUp}>
               {/* username */}
               <div className="form-control">
                 <label className="label">
@@ -121,7 +121,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="name"
-                  className="input input-bordered"
+                  className="input input-bordered rounded-none focus:outline-none focus:border focus:border-gray-900"
                   required
                 />
               </div>
@@ -134,7 +134,7 @@ const Register = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered rounded-none focus:outline-none focus:border focus:border-gray-900"
                   required
                 />
               </div>
@@ -147,7 +147,7 @@ const Register = () => {
                   type="text"
                   name="photo_url"
                   placeholder="photo url"
-                  className="input input-bordered"
+                  className="input input-bordered rounded-none focus:outline-none focus:border focus:border-gray-900"
                   required
                 />
               </div>
@@ -156,7 +156,7 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
+                <label className="input input-bordered rounded-none focus-within:outline-none focus-within:border focus-within:border-gray-900 flex items-center gap-2">
                   <input
                     onFocus={() => setPasswordValid(false)}
                     onBlur={() => setPasswordValid(true)}
@@ -177,7 +177,7 @@ const Register = () => {
 
                 {/* password notificaton */}
                 <div
-                  className={`p-3 max-w-[280px] rounded-xl z-50 absolute top-20 left-1 shadow-lg bg-bglight ${
+                  className={`p-3 w-full z-50 absolute top-24 left-0 shadow-lg border border-gray-900 bg-gray-50 ${
                     !passwordValid ? "block" : "hidden"
                   }`}
                 >
@@ -192,14 +192,14 @@ const Register = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn bg-primary text-white">
-                  Sign Up
+                <button type="submit" className="btn bg-gray-900 rounded-none text-white">
+                  Register
                 </button>
               </div>
               <p className="text-sm text-center">
                 Already have an account?{" "}
                 <Link
-                  to={"/auth/login"}
+                  to={"/login"}
                   className="underline text-hover font-bold"
                 >
                   Login
@@ -208,7 +208,7 @@ const Register = () => {
               <div className="divider">or</div>
               <button
                 onClick={handleGoogleSignUp}
-                className="btn btn-outline border-lightgray"
+                className="btn btn-outline border-lightgray rounded-none"
               >
                 <FcGoogle className="text-lg" />
                 Sign up with Google

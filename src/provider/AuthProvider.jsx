@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from './../firebase/firebase.config';
 import { Bounce, toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
