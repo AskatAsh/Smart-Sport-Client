@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { PropTypes } from 'prop-types';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from './../firebase/firebase.config';
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -38,10 +38,6 @@ const AuthProvider = ({children}) => {
         return updateProfile(auth.currentUser, profile);
     }
 
-    // reset password email
-    const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email)
-    }
 
     // sign in user using email and password
     const signInUser = (email, password) => {
@@ -72,7 +68,7 @@ const AuthProvider = ({children}) => {
         }
     }, [])
 
-    const authInfo = {user, setUser, createUser, updateUser, resetPassword, signInUser, googleSignIn, signOutUser, loading, toastMessage};
+    const authInfo = {user, setUser, createUser, updateUser, signInUser, googleSignIn, signOutUser, loading, toastMessage};
     
     return (
         <AuthContext.Provider value={authInfo}>
