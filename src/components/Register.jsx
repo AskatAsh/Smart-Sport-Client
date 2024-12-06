@@ -105,7 +105,7 @@ const Register = () => {
           <title>SmartSport | Register</title>
         </Helmet>
       </HelmetProvider>
-      <div className="hero my-10 bg-gray-50">
+      <div className="hero my-10">
         <div className="hero-content flex-col max-w-96 w-11/12">
           <div className="text-center">
             <h1 className="text-3xl font-bold">Register Now!</h1>
