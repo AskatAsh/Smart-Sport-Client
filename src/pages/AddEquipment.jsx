@@ -145,18 +145,18 @@ const AddEquipment = () => {
                 placeholder="Add category Name"
               />
             </div>
-            {/* Description */}
+            {/* Image Link */}
             <div className="w-full">
-              <label htmlFor="description" className="font-semibold">
-                Description
+              <label htmlFor="image" className="font-semibold">
+                Image (link)
               </label>
               <br />
               <input
                 className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
                 type="text"
-                name="description"
-                id="description"
-                placeholder="Add Description"
+                name="image"
+                id="image"
+                placeholder="Add Image Link"
               />
             </div>
           </div>
@@ -164,7 +164,7 @@ const AddEquipment = () => {
             {/* Price */}
             <div className="w-full">
               <label htmlFor="price" className="font-semibold">
-                Price (taka)
+                Price ($usd)
               </label>
               <br />
               <input
@@ -228,20 +228,19 @@ const AddEquipment = () => {
             </div>
           </div>
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center">
-            {/* Image Link */}
+            {/* Description */}
             <div className="w-full">
-              <label htmlFor="image" className="font-semibold">
-                Image (link)
+              <label htmlFor="description" className="font-semibold">
+                Description
               </label>
               <br />
-              <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
-                type="text"
-                name="image"
-                id="image"
-                placeholder="Add Image Link"
+              <textarea rows={4}
+                className="textarea textarea-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                name="description"
+                id="description"
+                placeholder="Add Description"
               />
-            </div>
+            </div>      
           </div>
 
           <button
