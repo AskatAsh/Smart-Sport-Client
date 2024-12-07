@@ -2,14 +2,44 @@ import { FaEye } from "react-icons/fa6";
 import { RiDeleteBin6Fill, RiEdit2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import Swal from "sweetalert2";
 
-const EquipmentCard = ({ myEquipment }) => {
+const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
   const { _id, itemName, category, price, rating, image, quantity } =
     myEquipment;
 
-  const handleDelete = (id) => {
-    console.log(id);
-  };
+    const handleDelete = (id) => {
+      // console.log(id);
+      Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+          if (result.isConfirmed) {
+              fetch(`https://smart-sport-server.vercel.app/allEquipments/${id}`,{
+                  method: 'DELETE'
+              })
+                  .then(res => res.json())
+                  .then(data => {
+                      // console.log(data);
+                      if (data.deletedCount > 0) {
+                          const remainingEquipments = myList.filter(coffee => coffee._id !== id);
+                          setMyList(remainingEquipments);
+                          Swal.fire({
+                              title: "Deleted!",
+                              text: "This Equipment has been deleted.",
+                              icon: "success"
+                          });
+                      }
+                  })
+
+          }
+      });
+  }
 
   return (
     <div className="text-gray-800 flex flex-col lg:flex-row items-center gap-8 bg-white shadow-md border-2 border-gray-900 p-5 sm:p-8">
@@ -42,7 +72,7 @@ const EquipmentCard = ({ myEquipment }) => {
       {/* view, update delete */}
       <div className="flex flex-row lg:flex-col gap-3">
         <Link
-          to={`/coffee/${_id}`}
+          to={`/viewDetails/${_id}`}
           className="tooltip tooltip-top lg:tooltip-right"
           data-tip="View Details"
         >
@@ -51,7 +81,7 @@ const EquipmentCard = ({ myEquipment }) => {
           </button>
         </Link>
         <Link
-          to={`/update_coffee/${_id}`}
+          to={`/updateEquipment/${_id}`}
           className="tooltip tooltip-top lg:tooltip-right"
           data-tip="Update"
         >
@@ -77,6 +107,8 @@ const EquipmentCard = ({ myEquipment }) => {
 
 EquipmentCard.propTypes = {
   myEquipment: PropTypes.object,
+  myList: PropTypes.array,
+  setMyList: PropTypes.func
 };
 
 export default EquipmentCard;

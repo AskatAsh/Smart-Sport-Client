@@ -25,7 +25,7 @@ const MyEquipmentList = () => {
         <>
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {myList.map((myEquipment) => (
-              <EquipmentCard key={myEquipment._id} myEquipment={myEquipment} />
+              <EquipmentCard key={myEquipment._id} myEquipment={myEquipment} myList={myList} setMyList={setMyList} />
             ))}
           </section>
         </>
