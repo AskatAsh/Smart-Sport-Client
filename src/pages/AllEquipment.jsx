@@ -1,18 +1,34 @@
+import { useState } from "react";
+import { FaArrowDown91 } from "react-icons/fa6";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const AllEquipment = () => {
   const equipmentList = useLoaderData();
   const navigate = useNavigate();
+  const [sortedList, setSortedList] = useState(equipmentList);
 
   const handleViewDetails = (id) => {
     navigate(`/viewDetails/${id}`);
   };
 
+  const handleSortByPrice = () => {
+    const sorted = [...sortedList].sort((a, b) => b.price - a.price);
+    setSortedList(sorted);
+  };
+
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-10">
-      <h1 className="text-3xl font-semibold text-center mb-4">
-        All Sports Equipment
-      </h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-semibold text-left">
+          All Sports Equipment
+        </h1>
+        <button
+          className="btn btn-md bg-gray-900 text-white rounded-none flex items-center gap-2"
+          onClick={handleSortByPrice}
+        >
+          Sort by Price <FaArrowDown91 className="text-lg" />
+        </button>
+      </div>
       <div className="overflow-x-auto border-2 shadow-lg bg-white border-gray-900 my-8">
         <table className="table w-full">
           <thead>
@@ -26,7 +42,7 @@ const AllEquipment = () => {
             </tr>
           </thead>
           <tbody>
-            {equipmentList.map((equipment, index) => (
+            {sortedList.map((equipment, index) => (
               <tr key={equipment._id} className="hover:bg-gray-200">
                 <td>{index + 1}</td>
                 <td>
