@@ -253,7 +253,7 @@ const AddEquipment = () => {
             type="submit"
             className="md:col-span-2 btn bg-gray-900 hover:shadow-xl rounded-none text-white border-none "
           >
-            Add Equipment
+            Update Equipment
           </button>
         </div>
       </form>
