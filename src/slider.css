@@ -1,0 +1,47 @@
+/* Custom styles for the next button */
+.swiper-button-next {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  right: -1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 60px;
+  height: 150px;
+  top: 40%;
+  border-radius: 1rem 0 0 1rem;
+  transform: scale(0.5);
+}
+
+/* Custom styles for the previous button */
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  left: -1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 60px;
+  height: 150px;
+  top: 40%;
+  border-radius: 0 1rem 1rem 0;
+  transform: scale(0.5);
+}
+
+/* Optional: Add hover effects */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0px;
+  padding: 6px 0px;
+  width: 100px;
+  left: 50%;
+  border-radius: 1rem 1rem 0 0;
+}
+.swiper-pagination-bullet{
+  background-color: rgb(255, 255, 255);
+}
+.swiper-pagination-bullet-active {
+  background-color: white;
+}
