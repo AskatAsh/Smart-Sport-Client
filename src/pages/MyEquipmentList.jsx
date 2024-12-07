@@ -15,7 +15,7 @@ const MyEquipmentList = () => {
         );
         setMyList(myEquipments);
       });
-  }, [user]);
+  }, []);
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-16">
       <h1 className="my-8 font-semibold text-3xl text-center">
