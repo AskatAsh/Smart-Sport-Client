@@ -66,6 +66,9 @@ const AddEquipment = () => {
           <title>SmartSport | Add Equipment</title>
         </Helmet>
       </HelmetProvider>
+      <h1 className="my-8 font-semibold text-3xl text-center">
+        Add Equipment
+      </h1>
       <form
         onSubmit={handleAddCoffee}
         className="max-w-7xl w-11/12 mx-auto border-2 border-gray-900 bg-white shadow-lg"
