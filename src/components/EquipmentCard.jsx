@@ -3,6 +3,7 @@ import { RiDeleteBin6Fill, RiEdit2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import Swal from "sweetalert2";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
   const { _id, itemName, category, price, rating, image, quantity } =
@@ -73,8 +74,9 @@ const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
       <div className="flex flex-row lg:flex-col gap-3">
         <Link
           to={`/viewDetails/${_id}`}
-          className="tooltip tooltip-top lg:tooltip-right"
-          data-tip="View Details"
+          // className="tooltip tooltip-top lg:tooltip-right"
+          // data-tip="View Details"
+          data-tooltip-id="viewDetails"
         >
           <button className="bg-gray-200 text-gray-900 w-[40px] h-[40px] flex items-center justify-center text-xl">
             <FaEye />
@@ -82,16 +84,18 @@ const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
         </Link>
         <Link
           to={`/updateEquipment/${_id}`}
-          className="tooltip tooltip-top lg:tooltip-right"
-          data-tip="Update"
+          // className="tooltip tooltip-top lg:tooltip-right"
+          // data-tip="Update"
+          data-tooltip-id="update"
         >
           <button className="w-[40px] h-[40px] flex items-center justify-center text-xl bg-gray-900 text-white">
             <RiEdit2Fill />
           </button>
         </Link>
         <Link
-          className="tooltip tooltip-top lg:tooltip-right"
-          data-tip="Delete"
+          // className="tooltip tooltip-top lg:tooltip-right"
+          // data-tip="Delete"
+          data-tooltip-id="delete"
         >
           <button
             onClick={() => handleDelete(_id)}
@@ -101,6 +105,21 @@ const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
           </button>
         </Link>
       </div>
+      <ReactTooltip
+        id="viewDetails"
+        place="top"
+        content="View"
+      />
+      <ReactTooltip
+        id="update"
+        place="top"
+        content="Update"
+      />
+      <ReactTooltip
+        id="delete"
+        place="top"
+        content="Delete"
+      />
     </div>
   );
 };
