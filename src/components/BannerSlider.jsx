@@ -8,7 +8,7 @@ import "../../src/slider.css";
 const BannerSlider = () => {
 
   return (
-    <section className="max-w-7xl w-11/12 mx-auto my-10 overflow-hidden border-2 border-black">
+    <section className="w-full mx-auto mb-10 overflow-hidden">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -20,31 +20,34 @@ const BannerSlider = () => {
         }}
         navigation={true}
         // autoplay={{
-        //   delay: 3000,
+        //   delay: 2500,
         //   disableOnInteraction: false,
         // }}
         modules={[Keyboard, Pagination, Navigation, Autoplay]}
-        className="max-h-[460px] h-full flex overflow-hidden"
+        className="max-h-[500px] h-full overflow-hidden"
       >
-        <SwiperSlide>
+        <SwiperSlide className="relative">
+          <div className="w-full h-1/2 bg-gradient-to-b from-gray-900 to-transparent top-0 left-0 absolute"></div>
           <img
             src="https://i.ibb.co/WFRNY1Q/fitness-club.jpg"
             alt="Fitness Club"
-            style={{ width: "auto", height: "100%", aspectRatio: "18/9"}}
+            style={{ width: "100%", height: "auto", aspectRatio: "22/9", objectFit: "cover"}}
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="relative">
+          <div className="w-full h-1/2 bg-gradient-to-b from-gray-900 to-transparent top-0 left-0 absolute"></div>
           <img
             src="https://i.ibb.co/BfG7R3J/cycle-equipments.png"
             alt="Cycle Equipment"
-            style={{ width: "auto", height: "100%", aspectRatio: "18/9"}}
+            style={{ width: "100%", height: "auto", aspectRatio: "22/9", objectFit: "cover"}}
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="relative">
+          <div className="w-full h-1/2 bg-gradient-to-b from-gray-900 to-transparent top-0 left-0 absolute"></div>
           <img
             src="https://i.ibb.co/6Z6NzXR/fitness-equipment.jpg"
             alt="Fitness Equipment"
-            style={{ width: "auto", height: "100%", aspectRatio: "18/9"}}
+            style={{ width: "100%", height: "auto", aspectRatio: "22/9", objectFit: "cover"}}
           />
         </SwiperSlide>
       </Swiper>

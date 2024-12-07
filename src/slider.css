@@ -1,106 +1,96 @@
 /* Custom styles for the next button */
 .swiper-button-next {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 2rem;
-    right: -1rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 3rem;
-    height: 8rem;
-    top: 40%;
-    border-radius: 1rem 0 0 1rem;
-    transform: scale(0.5);
-  }
-  
-  /* Custom styles for the previous button */
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  right: -1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 3rem;
+  height: 8rem;
+  top: 40%;
+  border-radius: 1rem 0 0 1rem;
+  transform: scale(0.5);
+}
+
+/* Custom styles for the previous button */
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  left: -1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 3rem;
+  height: 8rem;
+  top: 40%;
+  border-radius: 0 1rem 1rem 0;
+  transform: scale(0.5);
+}
+
+/* hover effects */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Pagination styling */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px;
+  padding: 0.25rem 0px;
+  width: 5rem;
+  left: 50%;
+  border-radius: 1rem 1rem 0 0;
+  transform: translateX(-50%);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(255, 238, 0);
+}
+
+/* Responsive media queries */
+
+/* For screens smaller than 768px (tablets and mobile devices) */
+@media (max-width: 768px) {
+  /* Adjust button sizes for smaller screens */
+  .swiper-button-next,
   .swiper-button-prev {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 2rem;
-    left: -1rem;
-    background-color: rgba(0, 0, 0, 0.3);
     width: 3rem;
-    height: 8rem;
-    top: 40%;
-    border-radius: 0 1rem 1rem 0;
+    height: 6rem;
+    font-size: 1.5rem;
     transform: scale(0.5);
   }
-  
-  /* hover effects */
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+
+  /* Adjust pagination */
+  .swiper-pagination-bullets {
+    width: 2rem;
+    bottom: 1rem;
   }
-  
-  /* Pagination styling */
-  .swiper-horizontal > .swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal {
-    background-color: rgba(0, 0, 0, 0.3);
-    bottom: 0px;
-    padding: 0.25rem 0px;
-    width: 5rem;
-    left: 50%;
-    border-radius: 1rem 1rem 0 0;
-    transform: translateX(-50%);
-  }
-  
+
+  /* Adjust bullet size */
   .swiper-pagination-bullet {
-    background-color: rgb(255, 255, 255);
+    width: 0.5rem;
+    height: 0.5rem;
   }
-  
-  .swiper-pagination-bullet-active {
-    background-color: white;
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+  /* Adjust button sizes even further for small screens */
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 2.75rem;
+    height: 5rem;
+    font-size: 1.2rem;
+    transform: scale(0.5);
   }
-  
-  /* Responsive media queries */
-  
-  /* For screens smaller than 768px (tablets and mobile devices) */
-  @media (max-width: 768px) {
-    /* Adjust button sizes for smaller screens */
-    .swiper-button-next,
-    .swiper-button-prev {
-      width: 3rem;
-      height: 6rem;
-      font-size: 1.5rem;
-      transform: scale(0.5);
-    }
-  
-    /* Adjust pagination */
-    .swiper-pagination-bullets {
-      width: 2rem;
-      bottom: 1rem;
-    }
-  
-    /* Adjust bullet size */
-    .swiper-pagination-bullet {
-      width: 0.5rem;
-      height: 0.5rem;
-    }
+
+  /* Adjust pagination for mobile */
+  .swiper-pagination-bullets {
+    width: 1rem;
+    bottom: 1rem;
   }
-  
-  /* For screens smaller than 480px (mobile phones) */
-  @media (max-width: 480px) {
-    /* Adjust button sizes even further for small screens */
-    .swiper-button-next,
-    .swiper-button-prev {
-      width: 2.75rem;
-      height: 5rem;
-      font-size: 1.2rem;
-      transform: scale(0.5);
-    }
-  
-    /* Adjust pagination for mobile */
-    .swiper-pagination-bullets {
-      width: 1rem;
-      bottom: 1rem;
-    }
-    .swiper-horizontal > .swiper-pagination-bullets,
-    .swiper-pagination-bullets.swiper-pagination-horizontal {
-      padding: 0.1rem 0px;
-    }
-  
-    /* Adjust bullet size */
-    .swiper-pagination-bullet {
-      width: 0.4rem;
-      height: 0.4rem;
-    }
+
+  /* Adjust bullet size */
+  .swiper-pagination-bullet {
+    width: 0.4rem;
+    height: 0.4rem;
   }
-  
+}
