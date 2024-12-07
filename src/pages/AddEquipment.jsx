@@ -66,9 +66,7 @@ const AddEquipment = () => {
           <title>SmartSport | Add Equipment</title>
         </Helmet>
       </HelmetProvider>
-      <h1 className="my-8 font-semibold text-3xl text-center">
-        Add Equipment
-      </h1>
+      <h1 className="my-8 font-semibold text-3xl text-center">Add Equipment</h1>
       <form
         onSubmit={handleAddCoffee}
         className="max-w-7xl w-11/12 mx-auto border-2 border-gray-900 bg-white shadow-lg"
@@ -78,7 +76,7 @@ const AddEquipment = () => {
             {/* Item Name */}
             <div className="w-full">
               <label htmlFor="itemName" className="font-semibold">
-                Item Name
+                Item Name*
               </label>
               <br />
               <input
@@ -87,12 +85,13 @@ const AddEquipment = () => {
                 name="itemName"
                 id="itemName"
                 placeholder="Add Equipment Name"
+                required
               />
             </div>
             {/* Stock Quantity */}
             <div className="w-full">
               <label htmlFor="stock" className="font-semibold">
-                Stock Status (available quantity)
+                Stock Status (available quantity)*
               </label>
               <br />
               <input
@@ -102,6 +101,7 @@ const AddEquipment = () => {
                 name="stock"
                 id="stock"
                 placeholder="Add product quantity"
+                required
               />
             </div>
           </div>
@@ -109,7 +109,7 @@ const AddEquipment = () => {
             {/* Customization */}
             <div className="w-full">
               <label htmlFor="customization" className="font-semibold">
-                Customization
+                Customization*
               </label>
               <br />
               <input
@@ -118,12 +118,13 @@ const AddEquipment = () => {
                 name="customization"
                 id="customization"
                 placeholder="e.g. bat with extra grip, hit paper etc."
+                required
               />
             </div>
             {/* Delivery Time */}
             <div className="w-full">
               <label htmlFor="deliveryTime" className="font-semibold">
-                Processing Time (in days)
+                Processing Time (in days)*
               </label>
               <br />
               <input
@@ -132,6 +133,7 @@ const AddEquipment = () => {
                 name="deliveryTime"
                 id="deliveryTime"
                 placeholder="e.g. 3-5 businness days"
+                required
               />
             </div>
           </div>
@@ -139,7 +141,7 @@ const AddEquipment = () => {
             {/* Category Name */}
             <div className="w-full">
               <label htmlFor="category" className="font-semibold">
-                Category Name
+                Category Name*
               </label>
               <br />
               <input
@@ -148,12 +150,13 @@ const AddEquipment = () => {
                 name="category"
                 id="category"
                 placeholder="Add category Name"
+                required
               />
             </div>
             {/* Image Link */}
             <div className="w-full">
               <label htmlFor="image" className="font-semibold">
-                Image (link)
+                Image (link)*
               </label>
               <br />
               <input
@@ -162,6 +165,7 @@ const AddEquipment = () => {
                 name="image"
                 id="image"
                 placeholder="Add Image Link"
+                required
               />
             </div>
           </div>
@@ -169,7 +173,7 @@ const AddEquipment = () => {
             {/* Price */}
             <div className="w-full">
               <label htmlFor="price" className="font-semibold">
-                Price ($usd)
+                Price ($usd)*
               </label>
               <br />
               <input
@@ -180,12 +184,13 @@ const AddEquipment = () => {
                 name="price"
                 id="price"
                 placeholder="Add Price"
+                required
               />
             </div>
             {/* Rating */}
             <div className="w-full">
               <label htmlFor="rating" className="font-semibold">
-                Rating (1 to 5)
+                Rating (1 to 5)*
               </label>
               <br />
               <input
@@ -197,6 +202,7 @@ const AddEquipment = () => {
                 name="rating"
                 id="rating"
                 placeholder="Add Rating"
+                required
               />
             </div>
           </div>
@@ -236,7 +242,7 @@ const AddEquipment = () => {
             {/* Description */}
             <div className="w-full">
               <label htmlFor="description" className="font-semibold">
-                Description
+                Description*
               </label>
               <br />
               <textarea
@@ -245,6 +251,7 @@ const AddEquipment = () => {
                 name="description"
                 id="description"
                 placeholder="Add Description"
+                required
               />
             </div>
           </div>

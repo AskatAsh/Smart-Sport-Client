@@ -66,6 +66,7 @@ const router = createBrowserRouter([
             <UpdateEquipment />
           </PrivateRoutes>
         ),
+        loader: ({params}) => fetch(`https://smart-sport-server.vercel.app/allEquipments/${params.id}`)
       },
     ],
   },

@@ -1,12 +1,73 @@
 import { useContext } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateEquipment = () => {
   const { user } = useContext(AuthContext);
+  const equipment = useLoaderData();
+  const {
+    _id,
+    itemName,
+    category,
+    price,
+    rating,
+    image,
+    quantity,
+    deliveryTime,
+    customization,
+    description,
+    userName,
+    userEmail,
+  } = equipment;
 
   const handleUpdateCoffee = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const itemName = form.itemName.value;
+    const quantity = Number(form.stock.value);
+    const customization = form.customization.value;
+    const deliveryTime = form.deliveryTime.value;
+    const category = form.category.value;
+    const description = form.description.value;
+    const price = Number(form.price.value);
+    const rating = Number(form.rating.value);
+    const image = form.image.value;
+    const userName = user?.displayName;
+    const userEmail = user?.email;
+    const updatedEquipment = {
+      itemName,
+      quantity,
+      customization,
+      deliveryTime,
+      category,
+      description,
+      price,
+      rating,
+      userName,
+      userEmail,
+      image,
+    };
+    fetch(`https://smart-sport-server.vercel.app/allEquipments/${_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updatedEquipment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Equipment Updated Successfully!",
+            icon: "success",
+            confirmButtonText: "Ok, Cool!",
+          });
+        }
+      });
   };
   return (
     <section className="my-16">
@@ -35,6 +96,7 @@ const UpdateEquipment = () => {
                 type="text"
                 name="itemName"
                 id="itemName"
+                defaultValue={itemName}
                 placeholder="Add Equipment Name"
               />
             </div>
@@ -50,6 +112,7 @@ const UpdateEquipment = () => {
                 min={0}
                 name="stock"
                 id="stock"
+                defaultValue={quantity}
                 placeholder="Add product quantity"
               />
             </div>
@@ -66,6 +129,7 @@ const UpdateEquipment = () => {
                 type="text"
                 name="customization"
                 id="customization"
+                defaultValue={customization}
                 placeholder="e.g. bat with extra grip, hit paper etc."
               />
             </div>
@@ -80,6 +144,7 @@ const UpdateEquipment = () => {
                 type="text"
                 name="deliveryTime"
                 id="deliveryTime"
+                defaultValue={deliveryTime}
                 placeholder="e.g. 3-5 businness days"
               />
             </div>
@@ -96,6 +161,7 @@ const UpdateEquipment = () => {
                 type="text"
                 name="category"
                 id="category"
+                defaultValue={category}
                 placeholder="Add category Name"
               />
             </div>
@@ -110,6 +176,7 @@ const UpdateEquipment = () => {
                 type="text"
                 name="image"
                 id="image"
+                defaultValue={image}
                 placeholder="Add Image Link"
               />
             </div>
@@ -128,6 +195,7 @@ const UpdateEquipment = () => {
                 step={0.01}
                 name="price"
                 id="price"
+                defaultValue={price}
                 placeholder="Add Price"
               />
             </div>
@@ -145,6 +213,7 @@ const UpdateEquipment = () => {
                 step={0.1}
                 name="rating"
                 id="rating"
+                defaultValue={rating}
                 placeholder="Add Rating"
               />
             </div>
@@ -161,6 +230,7 @@ const UpdateEquipment = () => {
                 type="text"
                 name="userName"
                 id="userName"
+                defaultValue={userName}
                 disabled
                 placeholder={user?.displayName}
               />
@@ -176,6 +246,7 @@ const UpdateEquipment = () => {
                 type="email"
                 name="userEmail"
                 id="userEmail"
+                defaultValue={userEmail}
                 disabled
                 placeholder={user?.email}
               />
@@ -193,6 +264,7 @@ const UpdateEquipment = () => {
                 className="textarea textarea-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
                 name="description"
                 id="description"
+                defaultValue={description}
                 placeholder="Add Description"
               />
             </div>
@@ -202,7 +274,7 @@ const UpdateEquipment = () => {
             type="submit"
             className="md:col-span-2 btn bg-gray-900 hover:shadow-xl rounded-none text-white border-none "
           >
-            Add Equipment
+            Update Equipment
           </button>
         </div>
       </form>
