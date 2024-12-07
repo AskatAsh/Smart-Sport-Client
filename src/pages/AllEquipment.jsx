@@ -10,7 +10,7 @@ const AllEquipment = () => {
 
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-10">
-      <h1 className="text-2xl font-bold text-center mb-4">
+      <h1 className="text-3xl font-semibold text-center mb-4">
         All Sports Equipment
       </h1>
       <div className="overflow-x-auto border-2 shadow-lg bg-white border-gray-900 my-8">

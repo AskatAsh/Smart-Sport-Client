@@ -5,6 +5,9 @@ const ViewDetails = () => {
 
   return (
     <section className="py-16">
+      <h1 className="my-8 font-semibold text-3xl text-center">
+        Equipment Details
+      </h1>
       <div className="max-w-6xl w-11/12 mx-auto p-4 sm:p-6 lg:p-8 border-2 border-gray-900 bg-white shadow-lg">
         <div className="flex flex-col md:flex-row gap-4">
           {/* Product Image Section */}

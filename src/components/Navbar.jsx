@@ -98,7 +98,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="bg-gray-900">
+    <header className="bg-gray-900 overflow-hidden">
   <nav className="w-full">
     <div className="max-w-7xl w-11/12 mx-auto flex items-center justify-between py-3">
       {/* Hamburger Icon for Medium/Small Screens */}
@@ -143,10 +143,10 @@ const Navbar = () => {
               Logout
             </button>
             <div
-              className="tooltip tooltip-bottom"
+              className="tooltip tooltip-left"
               data-tip={user?.displayName || user?.email}
             >
-              <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center border overflow-hidden">
                 {user?.photoURL ? (
                   <img
                     className="w-full h-full object-cover"
