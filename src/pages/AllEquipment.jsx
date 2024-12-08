@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { FaArrowDown91 } from "react-icons/fa6";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
@@ -18,6 +19,11 @@ const AllEquipment = () => {
 
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-10">
+      <HelmetProvider>
+        <Helmet>
+          <title>SmartSport | All Products</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-semibold text-left text-gray-800 dark:text-gray-100">
           All Sports Equipment

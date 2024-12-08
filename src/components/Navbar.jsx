@@ -114,7 +114,7 @@ const Navbar = () => {
 
       {/* Logo */}
       <div className="flex items-center justify-center">
-        <div className="flex items-center space-x-2">
+        <Link to={'/'} className="flex items-center space-x-2">
           <div className="w-6 sm:w-8 flex items-center justify-center">
             <img
               className="w-full h-auto"
@@ -125,7 +125,7 @@ const Navbar = () => {
           <span className="sm:text-lg font-semibold text-gray-50">
             SMART SPORT
           </span>
-        </div>
+        </Link>
       </div>
 
       {/* Navigation Links */}

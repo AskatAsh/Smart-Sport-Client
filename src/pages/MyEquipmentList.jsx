@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import EquipmentCard from "../components/EquipmentCard";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const MyEquipmentList = () => {
   const [myList, setMyList] = useState([]);
@@ -25,6 +26,11 @@ const MyEquipmentList = () => {
 
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-16">
+      <HelmetProvider>
+        <Helmet>
+          <title>SmartSport | My Products</title>
+        </Helmet>
+      </HelmetProvider>
       <h1 className="my-8 font-semibold text-3xl text-center">
         My Equipment List
       </h1>
