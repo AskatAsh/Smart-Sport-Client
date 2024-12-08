@@ -10,6 +10,7 @@ import MyEquipmentList from "./../pages/MyEquipmentList";
 import UpdateEquipment from "./../pages/UpdateEquipment";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoutes from "./privateRoutes";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs />,
       },
       {
         path: "/addEquipment",
