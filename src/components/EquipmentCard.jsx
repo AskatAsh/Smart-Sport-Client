@@ -43,7 +43,7 @@ const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
   };
 
   return (
-    <div className="text-gray-800 flex flex-col lg:flex-row items-center gap-8 bg-white shadow-md border-2 border-gray-900 p-5 sm:p-8">
+    <div className="text-gray-800 dark:text-gray-200 flex flex-col lg:flex-row items-center gap-8 bg-white dark:bg-gray-900 shadow-md border-2 border-gray-900 dark:border-gray-700 p-5 sm:p-8">
       {/* Image */}
       <div className="lg:h-[240px] flex flex-1 justify-center items-center">
         <img
@@ -75,7 +75,7 @@ const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
       {/* Actions: View, Update, Delete */}
       <div className="flex flex-row lg:flex-col gap-3">
         <Link to={`/viewDetails/${_id}`} data-tooltip-id="viewDetails">
-          <div className="w-[40px] h-[40px] bg-gray-200">
+          <div className="w-[40px] h-[40px] bg-gray-200 dark:bg-gray-500">
             <Lottie
               animationData={viewAnimation}
               loop={true}
@@ -84,23 +84,38 @@ const EquipmentCard = ({ myEquipment, myList, setMyList }) => {
           </div>
         </Link>
         <Link to={`/updateEquipment/${_id}`} data-tooltip-id="update">
-          <button className="w-[40px] h-[40px] flex items-center justify-center text-xl bg-gray-900 text-white">
+          <button className="w-[40px] h-[40px] flex items-center justify-center text-xl bg-gray-950 text-white">
             <RiEdit2Fill />
           </button>
         </Link>
         <button
           onClick={() => handleDelete(_id)}
           data-tooltip-id="delete"
-          className="w-[40px] h-[40px] flex items-center justify-center text-xl bg-red-600 text-white"
+          className="w-[40px] h-[40px] flex items-center justify-center text-xl bg-red-600 dark:bg-red-700 text-white dark:text-gray-200"
         >
           <RiDeleteBin6Fill />
         </button>
       </div>
 
       {/* Tooltips */}
-      <ReactTooltip id="viewDetails" place="top" content="View Details" />
-      <ReactTooltip id="update" place="top" content="Update" />
-      <ReactTooltip id="delete" place="top" content="Delete" />
+      <ReactTooltip
+        id="viewDetails"
+        place="top"
+        className="dark:bg-gray-700 dark:text-gray-200"
+        content="View Details"
+      />
+      <ReactTooltip
+        id="update"
+        place="top"
+        className="dark:bg-gray-700 dark:text-gray-200"
+        content="Update"
+      />
+      <ReactTooltip
+        id="delete"
+        place="top"
+        className="dark:bg-gray-700 dark:text-gray-200"
+        content="Delete"
+      />
     </div>
   );
 };
