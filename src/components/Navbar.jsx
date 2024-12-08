@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { FaRegCircleUser } from "react-icons/fa6";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -134,6 +135,7 @@ const Navbar = () => {
 
       {/* Button and User Info */}
       <div className="flex items-center gap-1 sm:gap-2">
+        <ThemeToggle />
         {user && user?.email ? (
           <>
             <button
