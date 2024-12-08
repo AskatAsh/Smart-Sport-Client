@@ -39,19 +39,19 @@ const Brands = () => {
     },
   ];
   return (
-    <section className="py-10">
-        <h1 className="my-8 font-semibold text-3xl text-center">
+    <section className="py-10 bg-white">
+        <h2 className="my-8 font-semibold text-3xl text-center">
         Popular Brands
-      </h1>
+      </h2>
       <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap">
+        <div className="flex flex-wrap">
           <div className="w-full px-4">
             <div className="flex flex-wrap items-center justify-center">
               {brandsData.map((brand, i) => (
                 <a
                   key={i}
                   href={brand.link}
-                  className="m-2 flex border-2 w-[150px] items-center justify-center 2xl:w-[180px]"
+                  className="m-2 flex border-2 w-[120px] sm:w-[150px] items-center justify-center 2xl:w-[180px]"
                 >
                   <img
                     src={brand.imageSrc}

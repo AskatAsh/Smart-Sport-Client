@@ -24,17 +24,17 @@ const Categories = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl w-11/12 mx-auto my-16">
-      <h1 className="my-8 font-semibold text-3xl text-center">
+    <section className="max-w-7xl w-11/12 mx-auto py-10">
+      <h2 className="my-8 font-semibold text-3xl text-center">
         Explore Our Categories
-      </h1>
+      </h2>
 
       {isLoading ? (
         <Loading />
       ) : categoryList.length > 0 ? (
         <ul className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {categoryList.map((equipment) => (
-            <li className="border-2 border-gray-300 py-3 px-6 text-lg text-center text-gray-900 font-semibold" key={equipment.id}>{equipment?.category}</li>
+            <li className="bg-white border-2 border-gray-300 py-3 px-6 text-lg text-center text-gray-900 font-semibold" key={equipment.id}>{equipment?.category}</li>
           ))}
         </ul>
       ) : (

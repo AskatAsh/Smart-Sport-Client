@@ -20,9 +20,9 @@ const Products = () => {
 
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-16">
-      <h1 className="my-8 font-semibold text-3xl text-center">
+      <h2 className="my-8 font-semibold text-3xl text-center">
         Our Exclusive Products
-      </h1>
+      </h2>
 
       {isLoading ? (
         <Loading />
