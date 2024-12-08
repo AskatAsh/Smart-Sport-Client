@@ -66,21 +66,26 @@ const AddEquipment = () => {
           <title>SmartSport | Add Equipment</title>
         </Helmet>
       </HelmetProvider>
-      <h1 className="my-8 font-semibold text-3xl text-center">Add Equipment</h1>
+      <h1 className="my-8 font-semibold text-3xl text-center text-gray-800 dark:text-gray-200">
+        Add Equipment
+      </h1>
       <form
         onSubmit={handleAddCoffee}
-        className="max-w-7xl w-11/12 mx-auto border-2 border-gray-900 bg-white shadow-lg"
+        className="max-w-7xl w-11/12 mx-auto border-2 border-gray-900 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 p-6 sm:p-10">
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
             {/* Item Name */}
             <div className="w-full">
-              <label htmlFor="itemName" className="font-semibold">
+              <label
+                htmlFor="itemName"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Item Name*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="text"
                 name="itemName"
                 id="itemName"
@@ -90,12 +95,15 @@ const AddEquipment = () => {
             </div>
             {/* Stock Quantity */}
             <div className="w-full">
-              <label htmlFor="stock" className="font-semibold">
+              <label
+                htmlFor="stock"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Stock Status (available quantity)*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="number"
                 min={0}
                 name="stock"
@@ -108,12 +116,15 @@ const AddEquipment = () => {
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
             {/* Customization */}
             <div className="w-full">
-              <label htmlFor="customization" className="font-semibold">
+              <label
+                htmlFor="customization"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Customization*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="text"
                 name="customization"
                 id="customization"
@@ -123,16 +134,19 @@ const AddEquipment = () => {
             </div>
             {/* Delivery Time */}
             <div className="w-full">
-              <label htmlFor="deliveryTime" className="font-semibold">
+              <label
+                htmlFor="deliveryTime"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Processing Time (in days)*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="text"
                 name="deliveryTime"
                 id="deliveryTime"
-                placeholder="e.g. 3-5 businness days"
+                placeholder="e.g. 3-5 business days"
                 required
               />
             </div>
@@ -140,12 +154,15 @@ const AddEquipment = () => {
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
             {/* Category Name */}
             <div className="w-full">
-              <label htmlFor="category" className="font-semibold">
+              <label
+                htmlFor="category"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Category Name*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="text"
                 name="category"
                 id="category"
@@ -155,12 +172,15 @@ const AddEquipment = () => {
             </div>
             {/* Image Link */}
             <div className="w-full">
-              <label htmlFor="image" className="font-semibold">
+              <label
+                htmlFor="image"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Image (link)*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="text"
                 name="image"
                 id="image"
@@ -172,12 +192,15 @@ const AddEquipment = () => {
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
             {/* Price */}
             <div className="w-full">
-              <label htmlFor="price" className="font-semibold">
+              <label
+                htmlFor="price"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Price ($usd)*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="number"
                 min={0}
                 step={0.01}
@@ -189,12 +212,15 @@ const AddEquipment = () => {
             </div>
             {/* Rating */}
             <div className="w-full">
-              <label htmlFor="rating" className="font-semibold">
+              <label
+                htmlFor="rating"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Rating (1 to 5)*
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="number"
                 min={1}
                 max={5}
@@ -209,12 +235,15 @@ const AddEquipment = () => {
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
             {/* User Name */}
             <div className="w-full">
-              <label htmlFor="userName" className="font-semibold">
+              <label
+                htmlFor="userName"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 User Name (read only)
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="text"
                 name="userName"
                 id="userName"
@@ -224,12 +253,15 @@ const AddEquipment = () => {
             </div>
             {/* User Email */}
             <div className="w-full">
-              <label htmlFor="userEmail" className="font-semibold">
+              <label
+                htmlFor="userEmail"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 User Email (read only)
               </label>
               <br />
               <input
-                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="border input-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 type="email"
                 name="userEmail"
                 id="userEmail"
@@ -241,13 +273,16 @@ const AddEquipment = () => {
           <div className="md:col-span-2 flex flex-col md:flex-row items-center justify-center">
             {/* Description */}
             <div className="w-full">
-              <label htmlFor="description" className="font-semibold">
+              <label
+                htmlFor="description"
+                className="font-semibold text-gray-800 dark:text-gray-200"
+              >
                 Description*
               </label>
               <br />
               <textarea
                 rows={4}
-                className="textarea textarea-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900"
+                className="textarea textarea-bordered p-2 w-full rounded-none focus:outline-none focus:border focus:border-gray-900 dark:border-gray-700 dark:focus:border-gray-500 dark:bg-gray-700 dark:text-gray-200"
                 name="description"
                 id="description"
                 placeholder="Add Description"
@@ -258,9 +293,9 @@ const AddEquipment = () => {
 
           <button
             type="submit"
-            className="md:col-span-2 btn bg-gray-900 hover:shadow-xl rounded-none text-white border-none "
+            className="md:col-span-2 btn bg-gray-900 hover:shadow-xl rounded-none text-white dark:bg-gray-900 dark:hover:bg-gray-950 border-none"
           >
-            Update Equipment
+            Add Equipment
           </button>
         </div>
       </form>
