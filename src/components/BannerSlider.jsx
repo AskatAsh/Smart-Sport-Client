@@ -19,10 +19,10 @@ const BannerSlider = () => {
           clickable: true,
         }}
         navigation={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         modules={[Keyboard, Pagination, Navigation, Autoplay]}
         className="max-h-[500px] h-full overflow-hidden"
       >
