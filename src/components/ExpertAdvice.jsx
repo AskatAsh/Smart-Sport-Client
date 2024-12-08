@@ -46,7 +46,7 @@ const ExpertAdvice = () => {
           {tips.map((tip) => (
             <div
               key={tip.id}
-              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+              className="bg-white dark:bg-gray-700 shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
             >
               <img
                 className="w-full h-48 object-cover"

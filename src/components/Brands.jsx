@@ -38,9 +38,10 @@ const Brands = () => {
       link: "#",
     },
   ];
+
   return (
-    <section className="py-10 bg-white">
-        <h2 className="my-8 font-semibold text-3xl text-center">
+    <section className="py-10 bg-white dark:bg-gray-900 mb-16">
+      <h2 className="mb-8 font-semibold text-3xl text-center text-gray-800 dark:text-gray-200">
         Popular Brands
       </h2>
       <div className="container mx-auto">
@@ -51,7 +52,7 @@ const Brands = () => {
                 <a
                   key={i}
                   href={brand.link}
-                  className="m-2 flex border-2 w-[120px] sm:w-[150px] items-center justify-center 2xl:w-[180px]"
+                  className="m-2 flex bg-white dark:bg-gray-800 w-[120px] sm:w-[150px] items-center justify-center 2xl:w-[180px]"
                 >
                   <img
                     src={brand.imageSrc}
