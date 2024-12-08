@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
@@ -7,7 +6,6 @@ import Loading from "./Loading";
 const Products = () => {
   const [equipmentList, setEquipmentList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -18,7 +16,7 @@ const Products = () => {
         setEquipmentList(data);
       })
       .finally(() => setIsLoading(false));
-  }, [user?.email]);
+  }, []);
 
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-16">
