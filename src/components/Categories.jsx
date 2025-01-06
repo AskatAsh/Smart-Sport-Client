@@ -46,10 +46,10 @@ const Categories = () => {
       {isLoading ? (
         <Loading />
       ) : categoryList.length > 0 ? (
-        <ul className="flex flex-wrap justify-between gap-4 sm:gap-6">
+        <ul className="grid max-[425px]:grid-cols-2 grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
           {categoryList.map((equipment) => (
             <li
-              className="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 py-3 px-6 text-xl text-center text-gray-900 dark:text-gray-100 font-semibold flex flex-col gap-2"
+              className="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 py-3 px-6 text-xl text-center text-gray-900 dark:text-gray-100 font-semibold flex flex-col gap-2 items-center"
               key={equipment.id}
             >
               <img className="w-20" src={equipment?.icon} alt={`icon of ${equipment?.category} category`} />
