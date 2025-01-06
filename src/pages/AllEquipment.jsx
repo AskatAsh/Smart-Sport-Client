@@ -1,16 +1,12 @@
 import { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { FaArrowDown91 } from "react-icons/fa6";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 
 const AllEquipment = () => {
   const equipmentList = useLoaderData();
-  const navigate = useNavigate();
   const [sortedList, setSortedList] = useState(equipmentList);
-
-  const handleViewDetails = (id) => {
-    navigate(`/viewDetails/${id}`);
-  };
 
   const handleSortByPrice = () => {
     const sorted = [...sortedList].sort((a, b) => b.price - a.price);
@@ -21,10 +17,10 @@ const AllEquipment = () => {
     <section className="max-w-7xl w-11/12 mx-auto my-10">
       <HelmetProvider>
         <Helmet>
-          <title>SmartSport | All Products</title>
+          <title>SmartSport | All Equipment</title>
         </Helmet>
       </HelmetProvider>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-3">
         <h1 className="text-3xl font-semibold text-left text-gray-800 dark:text-gray-100">
           All Sports Equipment
         </h1>
@@ -35,8 +31,8 @@ const AllEquipment = () => {
           Sort by Price <FaArrowDown91 className="text-lg" />
         </button>
       </div>
-      <div className="overflow-x-auto border-2 shadow-lg bg-white dark:bg-gray-800 border-gray-900 dark:border-gray-700 my-8">
-        <table className="table w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-10">
+        {/* <table className="table w-full">
           <thead>
             <tr className="bg-gray-900 dark:bg-gray-700 text-white dark:text-gray-200">
               <th>#</th>
@@ -81,10 +77,14 @@ const AllEquipment = () => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
+        {
+          sortedList.map((equipment) => <ProductCard key={equipment?._id} equipment={equipment} />)
+        }
       </div>
     </section>
   );
 };
 
 export default AllEquipment;
+// onClick={() => handleViewDetails(equipment._id)}
