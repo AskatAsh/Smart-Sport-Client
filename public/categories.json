@@ -1,0 +1,34 @@
+[
+    {
+      "category": "Cricket",
+      "icon": "https://i.ibb.co/93CKk14/cricket.png"
+    },
+    {
+      "category": "Football",
+      "icon": "https://i.ibb.co/p3B68ps/soccer.png"
+    },
+    {
+      "category": "Tennis",
+      "icon": "https://i.ibb.co/Gvf1vb2/tennis.png"
+    },
+    {
+      "category": "Basketball",
+      "icon": "https://i.ibb.co/ZTrP6yX/basketball.png"
+    },
+    {
+      "category": "Golf",
+      "icon": "https://i.ibb.co/18Gfy6X/golf.png"
+    },
+    {
+      "category": "Fitness",
+      "icon": "https://i.ibb.co/MZjhTdS/fitness.png"
+    },
+    {
+      "category": "Badminton",
+      "icon": "https://i.ibb.co/PCVGczD/badminton.png"
+    },
+    {
+      "category": "Hockey",
+      "icon": "https://i.ibb.co/WvB4C7K/hockey.png"
+    }
+  ]

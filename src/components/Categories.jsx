@@ -1,27 +1,41 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+// import cricket from "../../src/assets/icons/cricket.png";
+// import football from "../../src/assets/icons/soccer.png";
+// import tennis from "../../src/assets/icons/tennis.png";
+// import basketball from "../../src/assets/icons/basketball.png";
 
 const Categories = () => {
   const [categoryList, setCategoryList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+    useEffect(() => {
     setIsLoading(true);
-    fetch("https://smart-sport-server.vercel.app/allEquipments")
+    fetch("/categories.json")
       .then((res) => res.json())
       .then((data) => {
-        const uniqueCategories = data.reduce((acc, item) => {
-          const exists = acc.find((cat) => cat.category === item.category);
-          if (!exists) {
-            acc.push({ id: item._id, category: item.category });
-          }
-          return acc;
-        }, []);
-        setCategoryList(uniqueCategories);
+        setCategoryList(data);
       })
       .finally(() => setIsLoading(false));
   }, []);
+
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch("https://smart-sport-server.vercel.app/allEquipments")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const uniqueCategories = data.reduce((acc, item) => {
+  //         const exists = acc.find((cat) => cat.category === item.category);
+  //         if (!exists) {
+  //           acc.push({ id: item._id, category: item.category });
+  //         }
+  //         return acc;
+  //       }, []);
+  //       setCategoryList(uniqueCategories);
+  //     })
+  //     .finally(() => setIsLoading(false));
+  // }, []);
 
   return (
     <section className="max-w-7xl w-11/12 mx-auto my-16">
@@ -32,12 +46,13 @@ const Categories = () => {
       {isLoading ? (
         <Loading />
       ) : categoryList.length > 0 ? (
-        <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 py-8">
+        <ul className="flex flex-wrap justify-between gap-4 sm:gap-6">
           {categoryList.map((equipment) => (
             <li
-              className="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 py-3 px-6 text-lg text-center text-gray-900 dark:text-gray-100 font-semibold"
+              className="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 py-3 px-6 text-xl text-center text-gray-900 dark:text-gray-100 font-semibold flex flex-col gap-2"
               key={equipment.id}
             >
+              <img className="w-20" src={equipment?.icon} alt={`icon of ${equipment?.category} category`} />
               {equipment?.category}
             </li>
           ))}

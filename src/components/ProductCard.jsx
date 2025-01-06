@@ -8,7 +8,7 @@ const ProductCard = ({ equipment }) => {
   return (
     <div className="text-gray-800 dark:text-gray-200 flex flex-col gap-2 bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-600">
       {/* Image */}
-      <div className="flex justify-center items-center relative h-56 md:h-40">
+      <div className="flex justify-center items-center relative h-56">
         <img
           className="w-full h-full object-cover"
           src={image}
