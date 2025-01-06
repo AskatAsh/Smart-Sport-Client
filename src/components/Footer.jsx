@@ -1,5 +1,6 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-gray-900">
@@ -48,10 +49,10 @@ const Footer = () => {
           <h6 className="footer-title text-white opacity-90 font-medium">
             Company
           </h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Services</a>
-          <a className="link link-hover">Community</a>
+          <Link to="/" className="link link-hover">Home</Link>
+          <Link to="/allEquipment" className="link link-hover">All Equipment</Link>
+          <Link to="/contact" className="link link-hover">Contact Us</Link>
+          <Link to="/about" className="link link-hover">About Us</Link>
         </nav>
         <nav>
           <h6 className="footer-title text-white opacity-90 font-medium">
