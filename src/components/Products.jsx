@@ -9,7 +9,7 @@ const Products = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const limit = 6;
+    const limit = 8;
     fetch(`https://smart-sport-server.vercel.app/allEquipments?limit=${limit}`)
       .then((res) => res.json())
       .then((data) => {
@@ -27,7 +27,7 @@ const Products = () => {
       {isLoading ? (
         <Loading />
       ) : equipmentList.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {equipmentList.map((equipment) => (
             <ProductCard
               key={equipment._id}
