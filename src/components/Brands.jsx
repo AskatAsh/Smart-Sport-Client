@@ -19,7 +19,7 @@ const Brands = () => {
     },
     {
       imageSrc: "https://logowik.com/content/uploads/images/t_hera-arms-industries5820.logowik.com.webp",
-      altText: "Hera Arms Indestries",
+      altText: "Hera Arms Industries",
       link: "#",
     },
     {
@@ -44,21 +44,22 @@ const Brands = () => {
       <h2 className="mb-8 font-semibold text-3xl text-center text-gray-800 dark:text-gray-200">
         Popular Brands
       </h2>
-      <div className="container mx-auto">
+      <div className="max-w-7xl w-11/12 mx-auto">
         <div className="flex flex-wrap">
-          <div className="w-full px-4">
-            <div className="flex flex-wrap items-center justify-center">
+          <div className="w-full">
+            <div className="flex flex-wrap justify-center xl:justify-between gap-3">
               {brandsData.map((brand, i) => (
                 <a
                   key={i}
-                  href={brand.link}
-                  className="m-2 flex bg-white dark:bg-gray-800 w-[120px] sm:w-[150px] items-center justify-center 2xl:w-[180px]"
+                  href={brand?.link}
+                  className="flex flex-col bg-white dark:bg-gray-800 px-0 shadow-sm text-gray-700 dark:text-gray-300 border dark:border-gray-700 max-w-24 sm:max-w-32 lg:max-w-40"
                 >
                   <img
-                    src={brand.imageSrc}
-                    alt={brand.altText}
+                    src={brand?.imageSrc}
+                    alt={brand?.altText}
                     className="h-auto w-full"
                   />
+                  <p className="p-2 h-full flex items-center text-center justify-center text-sm sm:text-base">{brand?.altText}</p>
                 </a>
               ))}
             </div>
