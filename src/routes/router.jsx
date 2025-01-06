@@ -11,6 +11,7 @@ import UpdateEquipment from "./../pages/UpdateEquipment";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoutes from "./privateRoutes";
 import ContactUs from "../pages/ContactUs";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
       },
       {
         path: "/addEquipment",

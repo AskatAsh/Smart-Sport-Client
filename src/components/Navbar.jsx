@@ -108,6 +108,18 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-white"
+              : "text-gray-100 font-light hover:underline hover:underline-offset-2"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
     </>
   );
 
