@@ -6,7 +6,7 @@ const ErrorPage = () => {
     <section className="bg-white font-jost flex items-center justify-center h-screen">
       <HelmetProvider>
         <Helmet>
-          <title>04 Error</title>
+          <title>404 Error</title>
         </Helmet>
       </HelmetProvider>
       <div className="py-8 px-4 lg:px-6">
