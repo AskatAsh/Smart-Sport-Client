@@ -15,9 +15,28 @@ const Footer = () => {
             <span className="text-lg font-semibold">Smart Sport</span>
           </div>
           <p className="py-4 text-base">
-          Well reputed sports accessories e-commerce website, a platform where customers can browse, purchase, and review various sports accessories, from gear to apparel, catering to different sports disciplines.
+            Well reputed sports accessories e-commerce website, a platform where
+            customers can browse, purchase, and review various sports
+            accessories, from gear to apparel, catering to different sports
+            disciplines.
           </p>
           <ul className="flex items-center gap-2">
+            <li className="w-8 h-8 rounded-full bg-gray-800 text-white text-base hover:bg-white hover:text-gray-900 cursor-pointer flex items-center justify-center">
+              <a
+                href="https://www.linkedin.com/in/md-abdul-ashkat"
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
+            </li>
+            <li className="w-8 h-8 rounded-full bg-gray-800 text-white text-base hover:bg-white hover:text-gray-900 cursor-pointer flex items-center justify-center">
+              <a
+                href="https://www.facebook.com/md.abdul.ashkat"
+                target="_blank"
+              >
+                <FaFacebook />
+              </a>
+            </li>
             <li className="w-8 h-8 rounded-full bg-gray-800 text-white text-base hover:bg-white hover:text-gray-900 cursor-pointer flex items-center justify-center">
               <a href="#">
                 <FaInstagram />
@@ -30,17 +49,7 @@ const Footer = () => {
             </li>
             <li className="w-8 h-8 rounded-full bg-gray-800 text-white text-base hover:bg-white hover:text-gray-900 cursor-pointer flex items-center justify-center">
               <a href="#">
-                <FaFacebook />
-              </a>
-            </li>
-            <li className="w-8 h-8 rounded-full bg-gray-800 text-white text-base hover:bg-white hover:text-gray-900 cursor-pointer flex items-center justify-center">
-              <a href="#">
                 <FaYoutube />
-              </a>
-            </li>
-            <li className="w-8 h-8 rounded-full bg-gray-800 text-white text-base hover:bg-white hover:text-gray-900 cursor-pointer flex items-center justify-center">
-              <a href="#">
-                <FaLinkedin />
               </a>
             </li>
           </ul>
@@ -49,10 +58,18 @@ const Footer = () => {
           <h6 className="footer-title text-white opacity-90 font-medium">
             Company
           </h6>
-          <Link to="/" className="link link-hover">Home</Link>
-          <Link to="/allEquipment" className="link link-hover">All Equipment</Link>
-          <Link to="/contact" className="link link-hover">Contact Us</Link>
-          <Link to="/about" className="link link-hover">About Us</Link>
+          <Link to="/" className="link link-hover">
+            Home
+          </Link>
+          <Link to="/allEquipment" className="link link-hover">
+            All Equipment
+          </Link>
+          <Link to="/contact" className="link link-hover">
+            Contact Us
+          </Link>
+          <Link to="/about" className="link link-hover">
+            About Us
+          </Link>
         </nav>
         <nav>
           <h6 className="footer-title text-white opacity-90 font-medium">
