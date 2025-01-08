@@ -1,6 +1,5 @@
 # <img width="32px" src="https://i.ibb.co.com/5TnfHBK/smartsport-logo.webp"/> SMART SPORT
 
-## Description
 Smart Sport is a sports equipment and accessories e-commerce website, a platform where customers can browse, purchase, and review various sports accessories, from gear to apparel, catering to different sports disciplines.
 
 ![Project Screenshot](https://i.ibb.co/GRsmrc0/download.png)  
@@ -53,7 +52,7 @@ Check out the live version of the project:
 - **Footer:** Displays company information, policies, and social links.
 - **Dynamic Routing:** Main section renders pages based on routes.
 
-## Key Features
+## 🚀 Key Features
 
 - **Fetching Data From Database**:
   - Fetched equipment data from mongoDB database using get method
