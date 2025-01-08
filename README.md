@@ -1,13 +1,19 @@
 # <img width="32px" src="https://i.ibb.co.com/5TnfHBK/smartsport-logo.webp"/> SMART SPORT
 
-<img src="https://i.ibb.co.com/RDXbCX7/download.png"/>
-
-### Live Site Link: [smartsport-client.web.app](https://smartsport-client.web.app)
-
 ## Description
 Smart Sport is a sports equipment and accessories e-commerce website, a platform where customers can browse, purchase, and review various sports accessories, from gear to apparel, catering to different sports disciplines.
 
-## Technologies Used
+![Project Screenshot](https://i.ibb.co/GRsmrc0/download.png)  
+*A representative screenshot of the project.*
+
+---
+
+## 🌐 **Live Link**
+
+Check out the live version of the project:
+[Live Demo](https://smartsport-client.web.app)
+
+## 🛠️ Technologies Used
 - React Js
 - Tailwind CSS
 - DaisyUI
@@ -21,6 +27,31 @@ Smart Sport is a sports equipment and accessories e-commerce website, a platform
 - React icons
 - React Helmet
 
+---
+
+## 🧩 **Dependencies**
+- "@emotion/react": "^11.13.5",
+- "@emotion/styled": "^11.13.5",
+- "firebase": "^11.0.2",
+- "lottie-react": "^2.4.0",
+- "react": "^18.3.1",
+- "react-awesome-reveal": "^4.2.14",
+- "react-dom": "^18.3.1",
+- "react-helmet-async": "^2.0.5",
+- "react-icons": "^5.4.0",
+- "react-router-dom": "^7.0.2",
+- "react-toastify": "^10.0.6",
+- "react-tooltip": "^5.28.0",
+- "sweetalert": "^2.1.2",
+- "sweetalert2": "^11.14.5",
+- "swiper": "^11.1.15"
+
+---
+
+## 📂 **Architecture**
+- **Navbar:** Includes company logo, navigation links, user info, and authentication controls.
+- **Footer:** Displays company information, policies, and social links.
+- **Dynamic Routing:** Main section renders pages based on routes.
 
 ## Key Features
 
@@ -45,3 +76,21 @@ Smart Sport is a sports equipment and accessories e-commerce website, a platform
   - Log in using email and password
   - Sign in or sign up using google
   - Show user info in Navbar like image and name
+
+  ---
+## 📁 **Run in Local Machine**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AskatAsh/Smart-Sport-client.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd yourproject
+
+3. Install the dependencies:
+   ```bash
+   npm install
+
+4. Run the project:
+   ```bash
+   npm run dev
